@@ -7,7 +7,7 @@ before_install:
     - chmod +x gradlew
 
 install:
-   - build-tools-28.0.3
+  - yes | sdkmanager --licenses
 #  - wget --no-check-certificate "https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.tar.gz"
 #  - tar -xzf cmake-3.10.2-Linux-x86_64.tar.gz
   
