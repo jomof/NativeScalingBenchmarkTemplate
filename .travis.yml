@@ -2,6 +2,7 @@
 language: android
 android:
   components:
+  - build-tools-28.0.3
 
 before_install:
     - chmod +x gradlew
@@ -14,9 +15,9 @@ install:
 #  - unzip ninja-linux.zip
 #  - mv ninja cmake-3.10.2-Linux-x86_64/bin
   
-  - wget --no-check-certificate https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
-  - unzip sdk-tools-linux-3859397.zip
-  - yes | tools/bin/sdkmanager --licenses
+  #- wget --no-check-certificate https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+  #- unzip sdk-tools-linux-3859397.zip
+  #- yes | tools/bin/sdkmanager --licenses
   
 #  - ccache --version
   
