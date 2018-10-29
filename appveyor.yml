@@ -5,6 +5,7 @@ environment:
     
 install:
   # Android SDK
+  - appveyor DownloadFile https://dl.google.com/android/repository/android-ndk-r14b-windows-x86_64.zip
   - appveyor DownloadFile https://dl.google.com/android/repository/sdk-tools-windows-3859397.zip
   - 7z x sdk-tools-windows-3859397.zip -oC:\android-sdk-windows > nul
   - yes | C:\android-sdk-windows\tools\bin\sdkmanager.bat --licenses > nul
