@@ -3,6 +3,9 @@ add_library(native-lib SHARED myfile.cpp)
 #find_library(log-lib log)
 target_link_libraries(native-lib)
 
+if(DEFINED RAPTOR_CAGE_ENABLED)
+  raptor_cage()
+endif()
 
 # Android NDK
 get_filename_component(TEST_ANDROID_NDKEXPECTED_PATH
@@ -15,9 +18,6 @@ else()
   # toolchain file with a stable NDK.
   # https://github.com/android-ndk/ndk/issues/473
   get_filename_component(ANDROID_NDK "${ANDROID_NDK}" ABSOLUTE)
-  if(NOT "${ANDROID_NDK}" STREQUAL "${TEST_ANDROID_NDKEXPECTED_PATH}")
-    message(WARNING "Using custom NDK path (ANDROID_NDK is set): ${ANDROID_NDK}")
-  endif()
 endif()
 unset(TEST_ANDROID_NDKEXPECTED_PATH)
 file(TO_CMAKE_PATH "${ANDROID_NDK}" ANDROID_NDK)
